@@ -1,6 +1,6 @@
 [package]
 name = "eldflow"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["Mahmoud Harmouch <oss@wiseai.dev>"]
 edition = "2021"
 
