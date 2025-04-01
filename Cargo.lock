@@ -1166,6 +1166,8 @@ checksum = "92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813"
 [[package]]
 name = "eld"
 version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4be9af2c058c92bbd726d6bbe891d05362a5e002cf2ec7939afc682ee48bae90"
 dependencies = [
  "dioxus",
  "log",

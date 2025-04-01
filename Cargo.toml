@@ -1,6 +1,6 @@
 [package]
 name = "eldflow"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Mahmoud Harmouch <oss@wiseai.dev>"]
 edition = "2021"
 
@@ -35,7 +35,7 @@ axum = { version = "0.7.7", optional = true }
 tower-http = { version = "0.6.1", features = ["cors"], optional = true }
 reqwest = { version = "0.12.9", optional = true }
 dioxus-web = { version = "0.6.3", features = ["hydrate"] }
-eld = { path = "../eld/", features = ["dio"] }
+eld = { version = "0.0.1", features = ["dio"] }
 
 # Debug
 dioxus-logger = "0.6.2"
