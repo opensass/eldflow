@@ -19,17 +19,20 @@ FROM chef as builder
 COPY --from=planner /app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 RUN dx build --release
-RUN ls dist -lh
 COPY . .
 
 FROM debian:bookworm-slim AS runtime
 RUN apt-get update && apt install -y openssl
 RUN apt-get install ca-certificates
 WORKDIR /app
-COPY --from=builder /app/target/dx/eldflow/release/web /user/local/bin
+COPY --from=builder /app/target/dx/eldflow/release/web /usr/local/bin/web
+
+# Make binary executable
+RUN chmod +x /usr/local/bin/web/server
+
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 443
 
-ENTRYPOINT ["/user/local/bin/dist/eldflow"]
+ENTRYPOINT ["/usr/local/bin/web/server"]
 
